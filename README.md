@@ -1,5 +1,4 @@
 # python-sample-apps-with-AIaS-apis
-Sample apps utilizing AI as Service (primarily OpenAI and Gemini) Web APIs
 
 ![Status](https://img.shields.io/badge/Status-On%20Hold-orange)
 
@@ -12,7 +11,7 @@ Sample apps utilizing AI as Service (primarily OpenAI and Gemini) Web APIs
 
 ## Summary
 
-Sample apps utilizing AI as Service (primarily OpenAI and Gemini) Web APIs
+Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs
 
 ## Reference
 
