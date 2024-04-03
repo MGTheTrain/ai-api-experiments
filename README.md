@@ -12,7 +12,7 @@ Sample apps utilizing AI as Service (primarily OpenAI and Gemini) Web APIs
 
 ## Summary
 
-TBD
+Sample apps utilizing AI as Service (primarily OpenAI and Gemini) Web APIs
 
 ## Reference
 
