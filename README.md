@@ -26,7 +26,7 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs
 
 #### Preconditions
 
-- If your IDE supports it, install a `Dev Containers extension`
+- If your IDE supports it, install `Dev Containers extension`
 - Create from the [secrets.template.cfg](./templates/secrets.template.cfg) in the [templates folder](./templates/) a `secrets.cfg` file.
 In a Unix-like terminal run the command `source secrets.cfg`.
 
