@@ -86,5 +86,5 @@ python image_generator.py --model <dall-e-2, dall-e-3> --prompt "<user content>"
 ```sh
 cd samples/speech-generator
 pip install -r requirements.txt
-python text_to_speech.py --model tts-1-hd --voice alloy --input "Hello, how are you today?" --output output/hello.mp3
+python speech_generator.py --model tts-1-hd --voice alloy --input "Hello, how are you today?" --output output/hello.mp3
 ```
