@@ -7,6 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - DD-MM-YEAR
+## [0.1.0] - 20-04-2024
 
-TBD
+- Chat bot sample app utilizing e.g. GPT-3.5
