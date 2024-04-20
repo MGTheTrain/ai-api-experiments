@@ -37,7 +37,7 @@ In a Unix-like terminal run the command `source secrets.cfg`.
 
 ##### Chat bot
 
-Install pip depdencies:
+Install pip dependencies:
 
 ```sh
 cd samples/chat-bot
@@ -64,7 +64,7 @@ python chatbot.py --system <System content here. Can be set to ''> --model <gpt-
 
 ##### Image generator
 
-Install pip depdencies and run application:
+Install pip dependencies and run application:
 
 ```sh
 cd samples/image-generator
