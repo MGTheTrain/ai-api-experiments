@@ -19,7 +19,7 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs.
 
 ### Features
 
-- [ ] Chat bot sample app utilizing e.g. GPT-3.5-Turbo
+- [ ] Chat bot sample app utilizing gpt-3.5-turbo model
 - [ ] Image generator sample app utilizing e.g. DALL-E
 - [ ] Speech generator sample app
 
@@ -39,7 +39,7 @@ In a Unix-like terminal run the command `source secrets.cfg`.
 ```sh
 cd samples/chat-bot
 pip install -r requirements.txt
-TBD
+python chatbot.py --system <System content here> --user <User content here>
 ```
 
 ##### Image generator
