@@ -33,12 +33,24 @@ In a Unix-like terminal run the command `source secrets.cfg`.
 
 ##### Chat bot
 
+```sh
+cd samples/chat-bot
+pip install -r requirements.txt
 TBD
+```
 
 ##### Image generator
 
+```sh
+cd samples/chat-bot
+pip install -r requirements.txt
 TBD
+```
 
 ##### Speech generator
 
+```sh
+cd samples/chat-bot
+pip install -r requirements.txt
 TBD
+```
