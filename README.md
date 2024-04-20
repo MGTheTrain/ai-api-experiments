@@ -21,7 +21,7 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs.
 
 - [x] Chat bot sample app utilizing gpt-3.5-turbo or gpt-4-turbo model
 - [ ] Chat bot sample app utilizing Gemini models
-- [ ] Image generator sample app utilizing e.g. DALL-E
+- [x] Image generator sample app utilizing dall-e-2 or dall-e-3 model
 - [ ] Speech generator sample app
 
 ### Getting started
