@@ -22,7 +22,7 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs.
 - [x] Chat bot sample app utilizing gpt-3.5-turbo or gpt-4-turbo model
 - [ ] Chat bot sample app utilizing Gemini models
 - [x] Image generator sample app utilizing dall-e-2 or dall-e-3 model
-- [ ] Speech generator sample app utilizing tts-1 or tts-1-hd model
+- [x] Speech generator sample app utilizing tts-1 or tts-1-hd model
 
 ### Getting started
 
@@ -86,5 +86,5 @@ python image_generator.py --model <dall-e-2, dall-e-3> --prompt "<user content>"
 ```sh
 cd samples/speech-generator
 pip install -r requirements.txt
-TBD
+python text_to_speech.py --model tts-1-hd --voice alloy --input "Hello, how are you today?" --output output/hello.mp3
 ```
