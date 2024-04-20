@@ -9,4 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 20-04-2024
 
+### Added
+
+- Initial project setup
 - Chat bot sample app utilizing e.g. GPT-3.5
