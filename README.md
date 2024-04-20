@@ -21,14 +21,14 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs.
 
 - [x] Chat bot sample app utilizing gpt-3.5-turbo or gpt-4-turbo model
 - [ ] Chat bot sample app utilizing Gemini models
-- [ ] Image generator sample app utilizing e.g. DALL-E
+- [x] Image generator sample app utilizing dall-e-2 or dall-e-3 model
 - [ ] Speech generator sample app
 
 ### Getting started
 
 #### Preconditions
 
-- If your IDE supports it, install `Dev Containers extension`
+- If your IDE supports it, install `Dev Containers extension` or download a [Python >=3.7.1 Release](https://www.python.org/downloads/)
 - Create from the [secrets.template.cfg](./templates/secrets.template.cfg) in the [templates folder](./templates/) a `secrets.cfg` file.
 In a Unix-like terminal run the command `source secrets.cfg`.
 - Create an `API key` in your OpenAI organization
@@ -37,12 +37,14 @@ In a Unix-like terminal run the command `source secrets.cfg`.
 
 ##### Chat bot
 
+Install pip dependencies:
+
 ```sh
 cd samples/chat-bot
 pip install -r requirements.txt
 ```
 
-If **user content does not consist of multiple new lines**:
+If **user content does not consist of multiple new lines**, run:
 
 ```sh
 python chatbot.py --system <System content here. Can be set to ''> --user <User content here> --model <gpt-3.5-turbo, gpt-4-turbo>
@@ -51,7 +53,7 @@ python chatbot.py --system <System content here. Can be set to ''> --user <User 
 python chatbot.py --system <System content here. Can be set to ''> --model <gpt-3.5-turbo, gpt-4-turbo>
 ```
 
-Update the content in the [user-content.txt file](samples/chat-bot/assets/user-content.txt) if **user content consists of multiple new lines**:
+Update the content in the [user-content.txt file](samples/chat-bot/assets/user-content.txt) if **user content consists of multiple new lines**, run:
 
 ```sh
 python chatbot.py --system <System content here. Can be set to ''> --model <gpt-3.5-turbo, gpt-4-turbo>
@@ -62,11 +64,16 @@ python chatbot.py --system <System content here. Can be set to ''> --model <gpt-
 
 ##### Image generator
 
+Install pip dependencies and run application:
+
 ```sh
 cd samples/image-generator
 pip install -r requirements.txt
-TBD
+python image_generator.py --model <dall-e-2, dall-e-3> --prompt "<user content>" --size <size of the image to be generated, e.g. 1024x1024>
+# Checkout link of `Generated image URL` in a browser of choice
 ```
+
+**NOTE:** ["When using DALL·E 3, images can have a size of 1024x1024, 1024x1792 or 1792x1024 pixels."](https://platform.openai.com/docs/guides/images/usage?context=node)
 
 ##### Speech generator
 

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 20-04-2024
+
+### Added
+
+- [Feature] Image generator sample app utilizing dall-e-2 or dall-e-3 model
+
 ## [0.1.0] - 20-04-2024
 
 ### Added
