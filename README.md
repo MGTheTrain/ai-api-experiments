@@ -35,7 +35,9 @@ In a Unix-like terminal run the command `source secrets.cfg`.
 
 #### Starting applications
 
-##### Chat bot
+---
+
+**Chat bot**
 
 Install pip dependencies:
 
@@ -62,7 +64,9 @@ python chatbot.py --system <System content here. Can be set to ''> --model <gpt-
 
 **NOTE:** You might need to change your billing plan, if you encounter the error `openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}`
 
-##### Image generator
+---
+
+**Image generator**
 
 Install pip dependencies and run application:
 
@@ -75,7 +79,9 @@ python image_generator.py --model <dall-e-2, dall-e-3> --prompt "<user content>"
 
 **NOTE:** ["When using DALL·E 3, images can have a size of 1024x1024, 1024x1792 or 1792x1024 pixels."](https://platform.openai.com/docs/guides/images/usage?context=node)
 
-##### Speech generator
+---
+
+**Speech generator**
 
 ```sh
 cd samples/speech-generator
