@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 20-04-2024
+
+### Added
+
+- [Feature] Speech generator sample app utilizing tts-1 or tts-1-hd model
+
+### Updated
+
+- Update formatting in `README.md for Starting application section`
+
 ## [0.2.0] - 20-04-2024
 
 ### Added
