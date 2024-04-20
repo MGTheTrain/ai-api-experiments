@@ -42,7 +42,7 @@ TBD
 ##### Image generator
 
 ```sh
-cd samples/chat-bot
+cd samples/image-generator
 pip install -r requirements.txt
 TBD
 ```
@@ -50,7 +50,7 @@ TBD
 ##### Speech generator
 
 ```sh
-cd samples/chat-bot
+cd samples/speech-generator
 pip install -r requirements.txt
 TBD
 ```
