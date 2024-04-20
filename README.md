@@ -28,7 +28,7 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs.
 
 #### Preconditions
 
-- If your IDE supports it, install `Dev Containers extension` or download a [Python 3 Release](https://www.python.org/downloads/)
+- If your IDE supports it, install `Dev Containers extension` or download a [Python >=3.7.1 Release](https://www.python.org/downloads/)
 - Create from the [secrets.template.cfg](./templates/secrets.template.cfg) in the [templates folder](./templates/) a `secrets.cfg` file.
 In a Unix-like terminal run the command `source secrets.cfg`.
 - Create an `API key` in your OpenAI organization
