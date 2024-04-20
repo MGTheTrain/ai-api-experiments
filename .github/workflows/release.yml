@@ -1,0 +1,17 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_git_tags_from_version_file_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Create git tag from version file
+        uses: MGTheTrain/public-github-actions/.github/actions/create-git-tag-from-version-file@main
+        with:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
