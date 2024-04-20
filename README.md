@@ -18,7 +18,9 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs
 
 ### Features
 
-TBD
+- [ ] Chat bot sample app
+- [ ] Image generator sample app
+- [ ] Speech generator sample app
 
 ### Getting started
 
