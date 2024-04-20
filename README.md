@@ -24,4 +24,21 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs
 
 ### Getting started
 
+#### Preconditions
+
+Create from the [secrets.template.cfg](./templates/secrets.template.cfg) in the [templates folder](./templates/) a `secrets.cfg` file.
+In a Unix-like terminal run the command `source secrets.cfg`.
+
+#### Starting applications
+
+##### Chat bot
+
+TBD
+
+##### Image generator
+
+TBD
+
+##### Speech generator
+
 TBD
