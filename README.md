@@ -65,7 +65,7 @@ python chatbot.py --system <System content here. Can be set to ''> --model <gpt-
 ```sh
 cd samples/image-generator
 pip install -r requirements.txt
-TBD
+python image_generator.py --model <dall-e-2, dall-e-3> --prompt <user content> --size <size of the image to be generated, e.g. 512x512>
 ```
 
 ##### Speech generator
