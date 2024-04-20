@@ -12,4 +12,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial project setup
-- [Feature] Chat bot sample app utilizing gpt-3.5-turbo model
+- [Feature] Chat bot sample app utilizing gpt-3.5-turbo or gpt-4-turbo model
