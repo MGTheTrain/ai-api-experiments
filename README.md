@@ -9,16 +9,17 @@
 
 ## Summary
 
-Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs
+Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs.
 
 ## Reference
 
 - [Get started with the Gemini API](https://ai.google.dev/docs)
 - [OpenAI API Reference](https://platform.openai.com/docs/api-reference/introduction)
+- [OpenAI Models](https://platform.openai.com/docs/models/overview)
 
 ### Features
 
-- [ ] Chat bot sample app utilizing e.g. GPT-3.5
+- [ ] Chat bot sample app utilizing e.g. GPT-3.5-Turbo
 - [ ] Image generator sample app utilizing e.g. DALL-E
 - [ ] Speech generator sample app
 
@@ -29,6 +30,7 @@ Sample apps utilizing AI as a Service (primarily OpenAI and Gemini) Web APIs
 - If your IDE supports it, install `Dev Containers extension`
 - Create from the [secrets.template.cfg](./templates/secrets.template.cfg) in the [templates folder](./templates/) a `secrets.cfg` file.
 In a Unix-like terminal run the command `source secrets.cfg`.
+- Create an `API key` in your OpenAI organization
 
 #### Starting applications
 
