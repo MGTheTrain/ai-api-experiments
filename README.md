@@ -65,8 +65,10 @@ python chatbot.py --system <System content here. Can be set to ''> --model <gpt-
 ```sh
 cd samples/image-generator
 pip install -r requirements.txt
-python image_generator.py --model <dall-e-2, dall-e-3> --prompt <user content> --size <size of the image to be generated, e.g. 512x512>
+python image_generator.py --model <dall-e-2, dall-e-3> --prompt "<user content>" --size <size of the image to be generated, e.g. 1024x1024>
 ```
+
+**NOTE:** ["When using DALL·E 3, images can have a size of 1024x1024, 1024x1792 or 1792x1024 pixels."](https://platform.openai.com/docs/guides/images/usage?context=node)
 
 ##### Speech generator
 
