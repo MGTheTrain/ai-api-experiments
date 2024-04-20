@@ -28,6 +28,6 @@ if __name__ == "__main__":
     if api_key:
         chatbot = ChatBot(api_key)
         response = chatbot.chat(args.system, args.user)
-        print(response)
+        print(response.content)
     else:
         print("Please provide your OpenAI API key.")
