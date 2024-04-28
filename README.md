@@ -48,16 +48,16 @@ pip install -r requirements.txt
 If **user content does not consist of multiple new lines**, run:
 
 ```sh
-python chatbot.py --system <System content here. Can be set to ''> --user <User content here> --model <gpt-3.5-turbo, gpt-4-turbo>
+python chat_bot.py --system <System content here. Can be set to ''> --user <User content here> --model <gpt-3.5-turbo, gpt-4-turbo>
 
 # User content with multiple new lines -> Update the content in the [user-content.txt file](samples/chat-bot/assets/user-content.txt) and run
-python chatbot.py --system <System content here. Can be set to ''> --model <gpt-3.5-turbo, gpt-4-turbo>
+python chat_bot.py --system <System content here. Can be set to ''> --model <gpt-3.5-turbo, gpt-4-turbo>
 ```
 
 Update the content in the [user-content.txt file](samples/chat-bot/assets/user-content.txt) if **user content consists of multiple new lines**, run:
 
 ```sh
-python chatbot.py --system <System content here. Can be set to ''> --model <gpt-3.5-turbo, gpt-4-turbo>
+python chat_bot.py --system <System content here. Can be set to ''> --model <gpt-3.5-turbo, gpt-4-turbo>
 
 ```
 
