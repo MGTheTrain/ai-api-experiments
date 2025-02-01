@@ -4,6 +4,9 @@ from pathlib import Path
 from src.chat_bot import ChatBot
 from src.image_generator import ImageGenerator
 from src.speech_generator import TextToSpeechGenerator
+from PIL import Image, ImageTk
+import requests
+from io import BytesIO
 
 # Get API key from environment
 API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -59,14 +62,26 @@ class AIApp(ctk.CTk):
         # Optional: Make the Text widget read-only (disable editing)
         self.output_text.configure(state="disabled")
 
+         # Create a frame for the image label
+        self.image_frame = ctk.CTkFrame(self)
+        self.image_label = ctk.CTkLabel(self.image_frame, text="Image Preview")
+        self.image_label.pack(padx=10, pady=10, expand=True)
+        self.image_frame.pack_forget()  # Hide the image frame initially
+
         self.update_fields()
 
-    def update_fields(self):
+    def update_fields(self) -> None:
         """Dynamically update input fields based on selected category"""
         for widget in self.options_frame.winfo_children():
             widget.destroy()
 
         category = self.category.get()
+
+        # Hide or show image label based on category
+        if category == "image":
+            self.image_frame.pack(padx=10, pady=10, expand=True)  # Show image frame
+        else:
+            self.image_frame.pack_forget()
 
         if category == "chatbot":
             ctk.CTkLabel(self.options_frame, text="Select Model", font=self.font).pack(pady=5)
@@ -100,7 +115,28 @@ class AIApp(ctk.CTk):
             self.speech_output_file_path = ctk.CTkEntry(self.options_frame, width=300, font=self.font)
             self.speech_output_file_path.pack(pady=5, padx=5)
 
-    def generate_output(self):
+    def display_image_from_url(self, image_url: str) -> None:
+        """Fetch and display image from the URL."""
+        try:
+            # Download the image from the URL
+            response = requests.get(image_url)
+            img_data = response.content
+            image = Image.open(BytesIO(img_data))
+
+            # Resize image to fit the display
+            image = image.resize((400, 400))
+
+            # Convert the image to a format tkinter understands
+            photo = ImageTk.PhotoImage(image)
+
+            # Display image in the label
+            self.image_label.configure(image=photo)
+            self.image_label.image = photo  # Keep a reference to the image
+
+        except Exception as e:
+            print(f"Error loading image: {e}")
+
+    def generate_output(self) -> None:
         """Process user input and call the appropriate AI function"""
         prompt = self.prompt_entry.get().strip()
         if not prompt:
@@ -123,8 +159,10 @@ class AIApp(ctk.CTk):
             image_url = image_generator.generate_image(model, prompt, size)
             self.output_text.configure(state="normal")  
             self.output_text.delete(1.0, "end")  
-            self.output_text.insert("end", image_url)  
+            self.output_text.insert("end", "Image url: \n" + image_url)  
             self.output_text.configure(state="disabled")  
+
+            self.display_image_from_url(image_url)
 
         elif category == "speech":
             model = self.speech_model.get()
@@ -133,7 +171,7 @@ class AIApp(ctk.CTk):
             tts_generator.generate_speech(model, voice, prompt, str(output_path))
             self.output_text.configure(state="normal")  
             self.output_text.delete(1.0, "end")  
-            self.output_text.insert("end", f"Speech saved to: {output_path}")  
+            self.output_text.insert("end", f"Speech saved to \n: {output_path}")  
             self.output_text.configure(state="disabled")  
 
 

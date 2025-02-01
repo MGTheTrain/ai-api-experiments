@@ -80,4 +80,8 @@ Run:
 python -m desktop.companion
 ```
 
-![companion app](./images/companion-app.jpg)
+Resulting images:
+
+![companion app view 1](./images/companion-app-view-1.jpg)
+
+![companion app view 2](./images/companion-app-view-2.jpg)
