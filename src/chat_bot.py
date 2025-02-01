@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 class ChatBot:
-    def __init__(self, api_key, model="gpt-3.5-turbo"):
+    def __init__(self, api_key, model="gpt-4o"):
         self.client = OpenAI(api_key=api_key)
         self.model = model
 

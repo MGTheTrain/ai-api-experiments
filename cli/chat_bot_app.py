@@ -4,7 +4,7 @@ from ..src.chat_bot import ChatBot
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Simple ChatBot")
-    parser.add_argument("--model", type=str, default="gpt-3.5-turbo", choices=["gpt-3.5-turbo", "gpt-4-turbo"], help="Model to use")
+    parser.add_argument("--model", type=str, default="gpt-4o", choices=["gpt-3.5-turbo", "gpt-4-turbo", "gpt-4o", "gpt-4o-mini", "o1", "o3-mini"], help="Model to use")
     parser.add_argument("--system", type=str, default="You are a poetic assistant, skilled in explaining complex programming concepts with creative flair.", help="System content")
     parser.add_argument("--user", type=str, default=None, help="User content")
     parser.add_argument("--user-file", type=str, default="inputs/user-content.txt", help="Path to a file containing user content")
