@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 01-02-2025
+
 ### Added
 
 - [Feature] Desktop application designed to provide a user-friendly interface for interacting with OpenAI’s AIaaS web-backends enabling image generation, speech generation and chatting functionality
