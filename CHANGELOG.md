@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - Renamed the project from `python-sample-apps-with-AIaaS-apis` to `ai-api-experiments` reflecting its expanded scope of additionally offering a desktop user interface for interacting with OpenAI’s AIaaS web-backends
-- Organized applications into `desktop-ui` and `cli` folders. Moved logic into separate files within the `src` folder and ensured they are reused across the applications 
+- Organized applications into `desktop` and `cli` folders. Moved logic into separate files within the `src` folder and ensured they are reused across the applications 
 - Reduce chat bot app complexity by removing option of having input prompt content in a file
 
 ### Removed 
