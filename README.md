@@ -85,3 +85,5 @@ Resulting images:
 ![companion app view 1](./images/companion-app-view-1.jpg)
 
 ![companion app view 2](./images/companion-app-view-2.jpg)
+
+![companion app view 3](./images/companion-app-view-3.jpg)

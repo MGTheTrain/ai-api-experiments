@@ -7,14 +7,14 @@ from src.speech_generator import TextToSpeechGenerator
 from PIL import Image, ImageTk
 import requests
 from io import BytesIO
+import uuid
 
-# Get API key from environment
+
 API_KEY = os.environ.get("OPENAI_API_KEY")
 if not API_KEY:
     ctk.CTkMessagebox("Error", "Set your OpenAI API key. On unix systems you would `export OPENAI_API_KEY=<your OpenAI_API_KEY>`")
     exit()
 
-# Initialize models
 chatbot = ChatBot(API_KEY)
 image_generator = ImageGenerator(API_KEY)
 tts_generator = TextToSpeechGenerator(API_KEY)
@@ -111,30 +111,34 @@ class AIApp(ctk.CTk):
             self.speech_voice.set("alloy")
             self.speech_voice.pack()
 
-            ctk.CTkLabel(self.options_frame, text="Enter your output file path", font=self.font).pack(pady=5)
-            self.speech_output_file_path = ctk.CTkEntry(self.options_frame, width=300, font=self.font)
-            self.speech_output_file_path.pack(pady=5, padx=5)
-
     def display_image_from_url(self, image_url: str) -> None:
         """Fetch and display image from the URL."""
         try:
-            # Download the image from the URL
             response = requests.get(image_url)
             img_data = response.content
             image = Image.open(BytesIO(img_data))
 
-            # Resize image to fit the display
             image = image.resize((400, 400))
-
-            # Convert the image to a format tkinter understands
+            
             photo = ImageTk.PhotoImage(image)
-
-            # Display image in the label
+            
             self.image_label.configure(image=photo)
-            self.image_label.image = photo  # Keep a reference to the image
+            self.image_label.image = photo  
 
         except Exception as e:
             print(f"Error loading image: {e}")
+
+    # Generate a random ID and create the file name
+    def generate_output_path(self) -> str:
+        random_id = str(uuid.uuid4())  
+        file_name = f"{random_id}.mp3"  
+
+        output_dir = "outputs"  
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)  
+
+        output_path = os.path.join(output_dir, file_name)
+        return output_path
 
     def generate_output(self) -> None:
         """Process user input and call the appropriate AI function"""
@@ -148,10 +152,10 @@ class AIApp(ctk.CTk):
         if category == "chatbot":
             model = self.chat_model.get()
             response = chatbot.chat(model, prompt).content
-            self.output_text.configure(state="normal")  # Enable editing temporarily
-            self.output_text.delete(1.0, "end")  # Clear previous content
-            self.output_text.insert("end", response)  # Insert new response
-            self.output_text.configure(state="disabled")  # Disable editing
+            self.output_text.configure(state="normal") 
+            self.output_text.delete(1.0, "end") 
+            self.output_text.insert("end", response) 
+            self.output_text.configure(state="disabled") 
 
         elif category == "image":
             model = self.image_model.get()
@@ -167,11 +171,12 @@ class AIApp(ctk.CTk):
         elif category == "speech":
             model = self.speech_model.get()
             voice = self.speech_voice.get()
-            output_path = self.speech_output_file_path.get()
+            output_path = self.generate_output_path()
             tts_generator.generate_speech(model, voice, prompt, str(output_path))
             self.output_text.configure(state="normal")  
             self.output_text.delete(1.0, "end")  
-            self.output_text.insert("end", f"Speech saved to \n: {output_path}")  
+            absolute_output_path = os.path.abspath(output_path)
+            self.output_text.insert("end", f"Speech saved to \n: {absolute_output_path}")  
             self.output_text.configure(state="disabled")  
 
 
