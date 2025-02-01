@@ -70,7 +70,7 @@ class AIApp(ctk.CTk):
 
         if category == "chatbot":
             ctk.CTkLabel(self.options_frame, text="Select Model", font=self.font).pack(pady=5)
-            self.chat_model = ctk.CTkComboBox(self.options_frame, values=["gpt-4o", "gpt-4o-mini", "o1", "o3-mini"])
+            self.chat_model = ctk.CTkComboBox(self.options_frame, values=["gpt-4o", "gpt-4o-mini"])
             self.chat_model.set("gpt-4o")
             self.chat_model.pack()
 
