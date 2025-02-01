@@ -40,7 +40,7 @@ Applications providing a user-friendly interface to interact with OpenAI's AIaaS
 Run:
 
 ```sh
-python -m cli.chat_bot_app --prompt <User content here> --model <gpt-4o, gpt-4o-mini, o1, o3-mini>
+python -m cli.chat_bot_app --prompt <your prompt> --model <gpt-4o, gpt-4o-mini, o1, o3-mini>
 ```
 
 On larger prompts consider creating a separate file and reading the content of the file into a variable:
@@ -58,7 +58,7 @@ python -m cli.chat_bot_app --prompt "$prompt" --model <gpt-4o, gpt-4o-mini, o1, 
 Install pip dependencies and run application:
 
 ```sh
-python -m cli.image_generator_app --model <dall-e-2, dall-e-3> --prompt "<user content>" --size <size of the image to be generated, e.g. 1024x1024>
+python -m cli.image_generator_app --model <dall-e-2, dall-e-3> --prompt "<your prompt>" --size <size of the image to be generated, e.g. 1024x1024>
 # Checkout link of `Generated image URL` in a browser of choice
 ```
 
