@@ -20,7 +20,7 @@ class AIApp(ctk.CTk):
 
     def __init__(self):
         super().__init__()
-        self.title("AI Assistant")
+        self.title("Companion")
         self.geometry("900x900")
 
         self.font = ('Helvetica', 16)
@@ -52,9 +52,9 @@ class AIApp(ctk.CTk):
         self.generate_button = ctk.CTkButton(self, text="Generate", command=self.generate_output, width=200)
         self.generate_button.pack(pady=20)
 
-        # Replace the output label with a larger Text widget for copying content
-        self.output_text = ctk.CTkTextbox(self, wrap="word", height=30, width=120, font=large_font) 
-        self.output_text.pack(pady=5, expand=True)
+        # Initialize the output text box and configure it to fill the window
+        self.output_text = ctk.CTkTextbox(master=self, font=self.font, corner_radius=0)
+        self.output_text.pack(padx=10, pady=10, expand=True, fill="both")
 
         # Optional: Make the Text widget read-only (disable editing)
         self.output_text.configure(state="disabled")
