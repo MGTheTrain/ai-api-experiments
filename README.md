@@ -43,6 +43,14 @@ Run:
 python -m cli.chat_bot_app --prompt <User content here> --model <gpt-4o, gpt-4o-mini, o1, o3-mini>
 ```
 
+On larger prompts consider creating a separate file and reading the content of the file into a variable:
+
+```sh
+vi prompt.txt
+prompt=$(cat prompt.txt)
+python -m cli.chat_bot_app --prompt "$prompt" --model <gpt-4o, gpt-4o-mini, o1, o3-mini>        
+```
+
 **NOTE:** You might need to change your billing plan, if you encounter the error `openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}`
 
 #### Image generator
