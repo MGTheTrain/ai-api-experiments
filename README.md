@@ -40,13 +40,13 @@ Applications providing a user-friendly interface to interact with OpenAI's AIaaS
 If **user content does not consist of multiple new lines** run:
 
 ```sh
-python -m cli.chat_bot_app --prompt <User content here> --model <gpt-3.5-turbo, gpt-4-turbo>
+python -m cli.chat_bot_app --prompt <User content here> --model <gpt-4o, gpt-4o-mini, o1, o3-mini>
 ```
 
 Update the content in the [user-content.txt file](chat-bot/assets/user-content.txt) if **user content consists of multiple new lines** and run:
 
 ```sh
-python -m cli.chat_bot_app --model <gpt-3.5-turbo, gpt-4-turbo>
+python -m cli.chat_bot_app --model <gpt-4o, gpt-4o-mini, o1, o3-mini>
 ```
 
 **NOTE:** You might need to change your billing plan, if you encounter the error `openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}`
