@@ -1,10 +1,11 @@
+from typing import Optional
 from openai import OpenAI
 
 class ImageGenerator:
-    def __init__(self, api_key):
-        self.client = OpenAI(api_key=api_key)
+    def __init__(self, api_key: str) -> None:
+        self.client: OpenAI = OpenAI(api_key=api_key)
 
-    def generate_image(self, model, prompt, size):
+    def generate_image(self, model: str, prompt: str, size: str) -> Optional[str]:
         response = self.client.images.generate(
             model=model,
             prompt=prompt,
@@ -12,5 +13,4 @@ class ImageGenerator:
             quality="standard",
             n=1
         )
-        image_url = response.data[0].url
-        return image_url
+        return response.data[0].url if response.data else None
