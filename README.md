@@ -69,7 +69,7 @@ python -m cli.image_generator_app --model "<dall-e-2, dall-e-3>" --prompt "<your
 Install pip dependencies and run application:
 
 ```sh
-python -m cli.speech_generator_app --model "tts-1-hd" --voice "alloy" --prompt "<your prompt>" --output-file "<absolute path to outputs folder>/response.audio.mp3"
+python -m cli.speech_generator_app --model "tts-1-hd" --voice "alloy" --prompt "<your prompt>"
 ```
 
 ### Launching Desktop app
