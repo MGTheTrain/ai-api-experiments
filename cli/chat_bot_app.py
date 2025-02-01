@@ -14,8 +14,8 @@ if __name__ == "__main__":
     user_prompt = args.prompt
     api_key = os.environ.get("OPENAI_API_KEY")
     if api_key:
-        chatbot = ChatBot(api_key, model=args.model)
-        response = chatbot.chat(user_prompt)
+        chatbot = ChatBot(api_key)
+        response = chatbot.chat(args.model, user_prompt)
         print(response.content)
     else:
         print("Please provide your OpenAI API key.")
