@@ -17,31 +17,63 @@ Applications providing a user-friendly interface to interact with OpenAI's AIaaS
 - [OpenAI Models](https://platform.openai.com/docs/models/overview)
 - [Get started with the Gemini API](https://ai.google.dev/docs)
 
-### Features
+## Features
 
 - [x] Chat bot CLI Tool utilizing gpt-3.5-turbo or gpt-4-turbo model
 - [x] Image generator CLI Tool utilizing dall-e-2 or dall-e-3 model
 - [x] Speech generator CLI Tool utilizing tts-1 or tts-1-hd model
 - [ ] Desktop application designed to provide a user-friendly interface for interacting with OpenAI’s AIaaS web-backends enabling image generation, speech generation and chatting functionality
 
-### Getting started
+## Getting started
 
-#### Preconditions
+### Preconditions
 
 - If your IDE supports it, install `Dev Containers extension` or download a [Python >=3.9.x Release](https://www.python.org/downloads/)
 - Install pip dependencies: `pip install -r requirements.txt`
 - Create an `API key` in your OpenAI organization
 - Export the API key in a terminal process: `export OPENAI_API_KEY="<your OPENAI_API_KEY>"` 
 
-#### CLI tools
+### Utilizing CLI tools
 
-Check out the [cli README.md](./cli/README.md) for more information on the sample CLI tools
+#### Chat bot
 
-#### Launching the Desktop app
+If **user content does not consist of multiple new lines** run:
+
+```sh
+python -m cli.chat_bot_app --prompt <User content here> --model <gpt-3.5-turbo, gpt-4-turbo>
+```
+
+Update the content in the [user-content.txt file](chat-bot/assets/user-content.txt) if **user content consists of multiple new lines** and run:
+
+```sh
+python -m cli.chat_bot_app --model <gpt-3.5-turbo, gpt-4-turbo>
+```
+
+**NOTE:** You might need to change your billing plan, if you encounter the error `openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}`
+
+#### Image generator
+
+Install pip dependencies and run application:
+
+```sh
+python -m cli.image_generator_app --model <dall-e-2, dall-e-3> --prompt "<user content>" --size <size of the image to be generated, e.g. 1024x1024>
+# Checkout link of `Generated image URL` in a browser of choice
+```
+
+**NOTE:** ["When using DALL·E 3, images can have a size of 1024x1024, 1024x1792 or 1792x1024 pixels."](https://platform.openai.com/docs/guides/images/usage?context=node)
+
+#### Speech generator
+
+Install pip dependencies and run application:
+
+```sh
+python -m cli.speech_generator_app --model tts-1-hd --voice alloy --input "Hello, how are you today?" --output output/hello.mp3
+```
+
+### Launching Desktop app
 
 Run:
 
 ```sh
-cd desktop-ui
-python companion.py
+python -m desktop-ui.companion
 ```

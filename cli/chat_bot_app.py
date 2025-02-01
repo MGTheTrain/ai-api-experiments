@@ -1,16 +1,15 @@
 import os
 import argparse
-from ..src.chat_bot import ChatBot
+from src.chat_bot import ChatBot
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Simple ChatBot")
     parser.add_argument("--model", type=str, default="gpt-4o", choices=["gpt-3.5-turbo", "gpt-4-turbo", "gpt-4o", "gpt-4o-mini", "o1", "o3-mini"], help="Model to use")
-    parser.add_argument("--system", type=str, default="You are a poetic assistant, skilled in explaining complex programming concepts with creative flair.", help="System content")
-    parser.add_argument("--user", type=str, default=None, help="User content")
-    parser.add_argument("--user-file", type=str, default="inputs/user-content.txt", help="Path to a file containing user content")
+    parser.add_argument("--prompt", type=str, default="Name me the Millennium Prize Problems and provide me an easy explanation in 2 sentences per problem", help="User prompt")
+    parser.add_argument("--file", type=str, default="inputs/user-content.txt", help="Path to a file containing user content in case message contains to many newlines")
     return parser.parse_args()
 
-def load_user_content(file_path):
+def load_user_prompt(file_path):
     if not file_path:
         return None
     try:
@@ -22,14 +21,14 @@ def load_user_content(file_path):
 
 if __name__ == "__main__":
     args = parse_arguments()
-    user_content = args.user
-    if user_content is None:
+    user_prompt = args.prompt
+    if user_prompt is None:
         user_file='inputs/user-content.txt'
-        user_content = load_user_content(args.user_file)
+        user_prompt = load_user_prompt(args.file)
     api_key = os.environ.get("OPENAI_API_KEY")
     if api_key:
         chatbot = ChatBot(api_key, model=args.model)
-        response = chatbot.chat(args.system, user_content)
+        response = chatbot.chat(args.system, user_prompt)
         print(response.content)
     else:
         print("Please provide your OpenAI API key.")

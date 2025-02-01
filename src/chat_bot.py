@@ -9,7 +9,6 @@ class ChatBot:
         completion = self.client.chat.completions.create(
             model=self.model,
             messages=[
-                {"role": "system", "content": system_content},
                 {"role": "user", "content": user_content}
             ]
         )

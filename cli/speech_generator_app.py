@@ -1,7 +1,7 @@
 import os
 import argparse
 from pathlib import Path
-from ..src.speech_generator import TextToSpeechGenerator
+from src.speech_generator import TextToSpeechGenerator
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Text-to-Speech Generator")

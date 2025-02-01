@@ -1,8 +1,8 @@
 import os
 import argparse
-from ..src.chat_bot import ChatBot
-from ..src.image_generator import ImageGenerator
-from ..src.speech_generator import TextToSpeechGenerator
+from src.chat_bot import ChatBot
+from src.image_generator import ImageGenerator
+from src.speech_generator import TextToSpeechGenerator
 
 import tkinter as tk
 

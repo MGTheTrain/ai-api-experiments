@@ -1,6 +1,6 @@
 import os
 import argparse
-from ..src.image_generator import ImageGenerator
+from src.image_generator import ImageGenerator
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Image Generator")
