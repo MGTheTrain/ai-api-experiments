@@ -18,12 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Renamed the project from `python-sample-apps-with-AIaaS-apis` to `ai-api-experiments` reflecting its expanded scope of additionally offering a desktop user interface for interacting with OpenAI’s AIaaS web-backends
 - Organized applications into `desktop-ui` and `cli` folders. Moved logic into separate files within the `src` folder and ensured they are reused across the applications 
-- Renamed release workflow
 - Reduce chat bot app complexity by removing option of having input prompt content in a file
 
 ### Removed 
 
 - Removed the template folder and clarified that the `OPENAI_API_KEY` must be exported in `README.md's`
+- Removed version file and CI workflow
 
 ## [0.3.0] - 20-04-2024
 
