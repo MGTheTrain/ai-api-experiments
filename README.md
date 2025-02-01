@@ -1,4 +1,4 @@
-# ai-api-companions
+# ai-api-experiments
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ Applications providing a user-friendly interface to interact with OpenAI's AIaaS
 - [x] Chat bot CLI Tool utilizing gpt-3.5-turbo or gpt-4-turbo model
 - [x] Image generator CLI Tool utilizing dall-e-2 or dall-e-3 model
 - [x] Speech generator CLI Tool utilizing tts-1 or tts-1-hd model
-- [ ] Desktop application designed to provide a user-friendly interface for interacting with OpenAI’s AIaaS web-backends enabling image generation, speech generation and chatting functionality
+- [x] Desktop application designed to provide a user-friendly interface for interacting with OpenAI’s AIaaS web-backends enabling image generation, speech generation and chatting functionality
 
 ## Getting started
 
@@ -77,5 +77,5 @@ python -m cli.speech_generator_app --model "tts-1-hd" --voice "alloy" --prompt "
 Run:
 
 ```sh
-python -m desktop-ui.companion
+python -m desktop.companion
 ```
