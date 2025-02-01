@@ -1,21 +1,10 @@
 import os
 import argparse
-from openai import OpenAI
+from ..src.chat_bot import ChatBot
+from ..src.image_generator import ImageGenerator
+from ..src.speech_generator import TextToSpeechGenerator
 
-class ChatBot:
-    def __init__(self, api_key, model="gpt-3.5-turbo"):
-        self.client = OpenAI(api_key=api_key)
-        self.model = model
-
-    def chat(self, system_content, user_content):
-        completion = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": system_content},
-                {"role": "user", "content": user_content}
-            ]
-        )
-        return completion.choices[0].message
+import tkinter as tk
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Simple ChatBot")
