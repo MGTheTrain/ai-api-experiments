@@ -79,3 +79,5 @@ Run:
 ```sh
 python -m desktop.companion
 ```
+
+![companion app](./images/companion-app.jpg)
