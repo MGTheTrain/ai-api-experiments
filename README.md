@@ -40,7 +40,7 @@ Applications providing a user-friendly interface to interact with OpenAI's AIaaS
 Run:
 
 ```sh
-python -m cli.chat_bot_app --prompt <your prompt> --model <gpt-4o, gpt-4o-mini, o1, o3-mini>
+python -m cli.chat_bot_app --prompt "<your prompt>" --model "<gpt-4o, gpt-4o-mini, o1, o3-mini>"
 ```
 
 On larger prompts consider creating a separate file and reading the content of the file into a variable:
@@ -48,7 +48,7 @@ On larger prompts consider creating a separate file and reading the content of t
 ```sh
 vi prompt.txt
 prompt=$(cat prompt.txt)
-python -m cli.chat_bot_app --prompt "$prompt" --model <gpt-4o, gpt-4o-mini, o1, o3-mini>        
+python -m cli.chat_bot_app --prompt "$prompt" --model "<gpt-4o, gpt-4o-mini, o1, o3-mini>"
 ```
 
 **NOTE:** You might need to change your billing plan, if you encounter the error `openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}`
@@ -58,7 +58,7 @@ python -m cli.chat_bot_app --prompt "$prompt" --model <gpt-4o, gpt-4o-mini, o1, 
 Install pip dependencies and run application:
 
 ```sh
-python -m cli.image_generator_app --model <dall-e-2, dall-e-3> --prompt "<your prompt>" --size <size of the image to be generated, e.g. 1024x1024>
+python -m cli.image_generator_app --model "<dall-e-2, dall-e-3>" --prompt "<your prompt>" --size "<size of the image to be generated, e.g. 1024x1024>"
 # Checkout link of `Generated image URL` in a browser of choice
 ```
 
@@ -69,7 +69,7 @@ python -m cli.image_generator_app --model <dall-e-2, dall-e-3> --prompt "<your p
 Install pip dependencies and run application:
 
 ```sh
-python -m cli.speech_generator_app --model tts-1-hd --voice alloy --input "Hello, how are you today?" --output output/hello.mp3
+python -m cli.speech_generator_app --model "tts-1-hd" --voice "alloy" --prompt "<your prompt>" --output-file "<absolute path to outputs folder>/response.audio.mp3"
 ```
 
 ### Launching Desktop app
