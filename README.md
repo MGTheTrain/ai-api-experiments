@@ -28,7 +28,7 @@ Applications providing a user-friendly interface to interact with OpenAI's AIaaS
 
 #### Preconditions
 
-- If your IDE supports it, install `Dev Containers extension` or download a [Python >=3.7.1 Release](https://www.python.org/downloads/)
+- If your IDE supports it, install `Dev Containers extension` or download a [Python >=3.9.x Release](https://www.python.org/downloads/)
 - Install pip dependencies: `pip install -r requirements.txt`
 - Create an `API key` in your OpenAI organization
 - Export the API key in a terminal process: `export OPENAI_API_KEY="<your OPENAI_API_KEY>"` 
