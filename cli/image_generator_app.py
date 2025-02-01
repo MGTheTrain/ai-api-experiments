@@ -1,23 +1,8 @@
 import os
 import argparse
-from openai import OpenAI
+from src.image_generator import ImageGenerator
 
-class ImageGenerator:
-    def __init__(self, api_key):
-        self.client = OpenAI(api_key=api_key)
-
-    def generate_image(self, model, prompt, size):
-        response = self.client.images.generate(
-            model=model,
-            prompt=prompt,
-            size=size,
-            quality="standard",
-            n=1
-        )
-        image_url = response.data[0].url
-        return image_url
-
-def parse_arguments():
+def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Image Generator")
     parser.add_argument("--model", type=str, choices=["dall-e-2", "dall-e-3"], default="dall-e-3", help="Model to use (default: dall-e-3)")
     parser.add_argument("--prompt", type=str, required=True, default="A colorful butterfly", help="Prompt for generating the image")

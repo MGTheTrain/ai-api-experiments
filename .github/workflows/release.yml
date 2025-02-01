@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  create_git_tags_from_version_file_job:
+  create-git-tag-from-version-file:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
