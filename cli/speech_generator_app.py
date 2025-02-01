@@ -3,7 +3,7 @@ import argparse
 from pathlib import Path
 from src.speech_generator import TextToSpeechGenerator
 
-def parse_arguments():
+def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Text-to-Speech Generator")
     parser.add_argument("--model", type=str, choices=["tts-1", "tts-1-hd"], default="tts-1", help="Model to use (default: tts-1)")
     parser.add_argument("--voice", type=str, choices=["alloy", "echo", "fable", "onyx", "nova", "shimmer"], help="Voice to use (default: alloy)")

@@ -2,7 +2,7 @@ import os
 import argparse
 from src.image_generator import ImageGenerator
 
-def parse_arguments():
+def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Image Generator")
     parser.add_argument("--model", type=str, choices=["dall-e-2", "dall-e-3"], default="dall-e-3", help="Model to use (default: dall-e-3)")
     parser.add_argument("--prompt", type=str, required=True, default="A colorful butterfly", help="Prompt for generating the image")
