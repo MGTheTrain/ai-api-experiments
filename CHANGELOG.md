@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added background task label to indicate process initiation without blocking UI
+
 ## [0.4.0] - 01-02-2025
 
 ### Added
